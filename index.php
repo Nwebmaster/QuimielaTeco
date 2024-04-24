@@ -19,10 +19,12 @@
     </header>
     <main>
         <section>
-            <div class="games">
-                <h2>Week 2</h2>
+        <div class="games">
+                
+                <div class="form">
+                    <h2>Week 2</h2>
                 <form action="insertBet.php" method="post">
-
+                
                     
                             <label class="form-control">Nombre
                             <input type="text" name="player_name">
@@ -32,7 +34,7 @@
                     <table class="table table-success table-striped">
                    
                         <thead>
-                            <br>
+                            
                             <tr>
                                 <th></th>
                                 <th>Local</th>
@@ -81,7 +83,7 @@
                                 </td>
                                 <td>
                                     <label class>
-                                        <input type="radio" name="radio_2" valuE="V">
+                                        <input type="radio" name="radio_2" value="V">
                                         <span></span>
                                     </label>
                                 <th><img src="/quimielateco/TeamLogos/barca2.png"><br>Team4</th>
@@ -222,12 +224,14 @@
                             -->
                         </tbody>
                     </table>
-
-                    <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" value="Reset" class="btn btn-secondary">Reset</button>
+                    
+                    <button type="submit" value="Submit" class="btn btn-primary">Enviar</button>
+                    <button type="reset" value="Reset" class="btn btn-danger">Borrar</button>
+                    <a href="/QuimielaTeco/tabla.php"><button type="button" class="btn btn-light">Tabla</button></a>
                 </form>
-
-            </div>
+                </div>
+                </div>
+            
         </section>
     </main>
     <aside>
