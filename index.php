@@ -7,99 +7,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ki-Niela</title>
     <link rel="stylesheet" href="/quimielateco/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
     <header style="height: 20vh; background-color: DarkCyan;">
         <h1>
-            Quiniela
+            Ki-Niela
         </h1>
     </header>
     <main>
         <section>
             <div class="games">
-                <h2>Liga Mx Jornada 1</h2>
+                <h2>Week 2</h2>
                 <form action="insertBet.php" method="post">
-                    <label class>
-                        <input type="text" name="player_name">
-                        <span></span>
-                    </label>
-                    <table>
+
+                    
+                            <label class="form-control">Nombre
+                            <input type="text" name="player_name">
+                            </label>
+                    
+
+                    <table class="table table-success table-striped">
+                   
                         <thead>
+                            <br>
                             <tr>
                                 <th></th>
                                 <th>Local</th>
                                 <th>Empate</th>
                                 <th>Visita</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Team1</th>
+                                <th><img src="/quimielateco/TeamLogos/RiverPlate2.png"><br>Team1</th>
                                 <td>
-                                    <label class>
-                                        <input type="radio" name="radio_21">
-                                        <span>L</span>
+                                    <label>
+                                        <input type="radio" name="radio_1" value="L">
+                                        <span></span>
                                     </label>
                                 </td>
                                 <td>
-                                    <label class>
-                                        <input type="radio" name="radio_21">
-                                        <span>E</span>
+                                    <label>
+                                        <input type="radio" name="radio_1" value="E">
+                                        <span></span>
                                     </label>
                                 </td>
                                 <td>
-                                    <label class>
-                                        <input type="radio" name="radio_21">
-                                        <span>V</span>
+                                    <label>
+                                        <input type="radio" name="radio_1" value="V">
+                                        <span></span>
                                     </label>
-                                <th>Team2</th>
                                 </td>
+                                <th><img src="/quimielateco/TeamLogos/Boca2.png"><br>Team2</th>
                             </tr>
+                           
                             <tr>
-                                <th>Team3</th>
+                            <th><img src="/quimielateco/TeamLogos/RealMadrid2.png"><br>Team3</th>
                                 <td>
                                     <label class>
-                                        <input type="radio" name="radio_22">
+                                        <input type="radio" name="radio_2" value="L">
                                         <span></span>
                                     </label>
                                 </td>
                                 <td>
                                     <label class>
-                                        <input type="radio" name="radio_22">
+                                        <input type="radio" name="radio_2" value="E">
                                         <span></span>
                                     </label>
                                 </td>
                                 <td>
                                     <label class>
-                                        <input type="radio" name="radio_22">
+                                        <input type="radio" name="radio_2" valuE="V">
                                         <span></span>
                                     </label>
-                                <th>Team4</th>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Team3</th>
-                                <td>
-                                    <label class>
-                                        <input type="radio" name="radio_23">
-                                        <span></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class>
-                                        <input type="radio" name="radio_23">
-                                        <span></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class>
-                                        <input type="radio" name="radio_23">
-                                        <span></span>
-                                    </label>
-                                <th>Team4</th>
+                                <th><img src="/quimielateco/TeamLogos/barca2.png"><br>Team4</th>
                                 </td>
                             </tr>
+                             <!--
                             <tr>
                                 <th>Team3</th>
                                 <td>
@@ -231,11 +219,12 @@
                                 <th>Team4</th>
                                 </td>
                             </tr>
+                            -->
                         </tbody>
                     </table>
 
-                    <button type="submit" value="Submit">Submit</button>
-                    <button type="reset" value="Reset">Reset</button>
+                    <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" value="Reset" class="btn btn-secondary">Reset</button>
                 </form>
 
             </div>

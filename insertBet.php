@@ -28,23 +28,14 @@
 
     //Take Data from form
     $player_name = $_REQUEST['player_name'];
-    $radio_21 = $_REQUEST['radio_21'];
-    $radio_22 = $_REQUEST['radio_22'];
-    $radio_23 = $_REQUEST['radio_23'];
-    $radio_25 = $_REQUEST['radio_25'];
-    $radio_26 = $_REQUEST['radio_26'];
-    $radio_27 = $_REQUEST['radio_27'];
-    $radio_28 = $_REQUEST['radio_28'];
-    $radio_29 = $_REQUEST['radio_29'];
-    $radio_30 = $_REQUEST['radio_30'];
+    $radio_1 = $_REQUEST['radio_1'];
+    $radio_2 = $_REQUEST['radio_2'];
+  
 
 
-    $sql = "INSERT INTO week_2 VALUES (default, '$player_name', '$radio_21', '$radio_22', '$radio_23', '$radio_25',
-        '$radio_26', '$radio_27', '$radio_28', '$radio_29', '$radio_30')";
+    $sql = "INSERT INTO week_2 VALUES (default, '$player_name', '$radio_1', '$radio_2')";
     if (mysqli_query($connection, $sql)) {
-        echo "<h3>data stored in a database successfully."
-            . " Please browse your localhost php my admin"
-            . " to view the updated data</h3>";
+        echo "<h3>data stored in a database successfully</h3>";
     } else {
         echo "ERROR: Hush! Sorry $sql. "
             . mysqli_error($connection);
