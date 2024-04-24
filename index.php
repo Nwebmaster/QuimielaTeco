@@ -227,7 +227,7 @@
                     
                     <button type="submit" value="Submit" class="btn btn-primary">Enviar</button>
                     <button type="reset" value="Reset" class="btn btn-danger">Borrar</button>
-                    <a href="/QuimielaTeco/tabla.php"><button type="button" class="btn btn-light">Tabla</button></a>
+                    <a href="/QuimielaTeco/displaytable.php"><button type="button" class="btn btn-light">Tabla</button></a>
                 </form>
                 </div>
                 </div>

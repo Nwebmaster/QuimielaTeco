@@ -48,9 +48,11 @@ table {
 }
 main{
     padding-top: 2.5em;
-    height: 70vh; 
+    height: 80vh; 
     width: 100%;
-    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    background-image: url("/QuimielaTeco/img/clbackground.jpg");
+    background-size: cover;
+
 }
 h1{
     font-size: 2em;
@@ -67,7 +69,7 @@ h2{
 .games{
     padding: 1em;
     width: 50%;
-    height: 55vh;
+    height: 60vh;
     margin: auto;
     background-color:green; 
     border: solid; 
@@ -97,8 +99,8 @@ button{
 }
 img{
     margin: 2px;
-    width: 24px;
-    height: 24px;
+    width: 2em;
+    height: 2em;
 }
 
 form{
