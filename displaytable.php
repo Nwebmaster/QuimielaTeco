@@ -3,9 +3,30 @@
 // Include the database configuration file
 
 require_once 'dbconfig.php';
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$query = "SELECT * FROM week_2 ORDER BY player_id ASC";
+$result = mysqli_query($db, $query);
 
 ?>
-<table class="table table-striped table-bordered">
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabla</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <table class="table table-striped table-bordered">
 
         <thead class="thead-dark">
 
@@ -20,42 +41,24 @@ require_once 'dbconfig.php';
                 <th>Game 2</th>
 
             </tr>
-
-        </thead>
-
-        <tbody>
-
-        <?php
-
-        $result = $db->query("SELECT * FROM week_2 ORDER BY id DESC");
-
-        if ($result->num_rows > 0) {
-
-            while ($row = $result->fetch_assoc()) {
-
-        ?>
-
             <tr>
+                <?php
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                        <td><?php echo $row['player_id']; ?></td>
 
-                <td><?= $row['player_id'] ?></td>
 
-                <td><?= $row['player_name'] ?></td>
 
-                <td><?= $row['game_1'] ?></td>
-
-                <td><?= $row['game_2'] ?></td>
-
-                
 
             </tr>
+    <?php
+                    }
+                }
 
-        <?php } } else { ?>
+    ?>
 
-            <tr><td colspan="5">No records found...</td></tr>
-
-        <?php } ?>
-
-        </tbody>
 
     </table>
-            
+
+</body>

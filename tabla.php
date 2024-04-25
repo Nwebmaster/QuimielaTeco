@@ -39,9 +39,7 @@ if (!empty($_GET['status'])) {
             $statusType = '';
 
             $statusMsg = '';
-
     }
-
 }
 
 ?>
@@ -64,117 +62,118 @@ if (!empty($_GET['status'])) {
 
 <body>
 
-<?php if (!empty($statusMsg)) { ?>
+    <?php if (!empty($statusMsg)) { ?>
 
-    <div class="col-xs-12">
+        <div class="col-xs-12">
 
-        <div class="alert <?= $statusType ?>"><?= $statusMsg ?></div>
-
-    </div>
-
-<?php } ?>
-
-<div class="row">
-
-    <div class="col-md-12 head">
-
-        <div class="float-right">
-
-            <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i> Import</a>
-
-            <a href="exportcsvfile.php" class="btn btn-primary"><i class="exp"></i> Export</a>
+            <div class="alert <?= $statusType ?>"><?= $statusMsg ?></div>
 
         </div>
 
+    <?php } ?>
+
+    <div class="row">
+
+        <div class="col-md-12 head">
+
+            <div class="float-right">
+
+                <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i> Import</a>
+
+                <a href="exportcsvfile.php" class="btn btn-primary"><i class="exp"></i> Export</a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12" id="importFrm" style="display: none;">
+
+            <form action="importcsvfile.php" method="post" enctype="multipart/form-data">
+
+                <input type="file" name="file" />
+
+                <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+
+            </form>
+
+        </div>
+
+        <table class="table table-striped table-bordered">
+
+            <thead class="thead-dark">
+
+                <tr>
+
+                    <th>Jugador</th>
+
+                    <th>Nombre</th>
+
+                    <th>Game 1</th>
+
+                    <th>Game 2</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <?php
+
+                $result = $db->query("SELECT * FROM week_2 ORDER BY id DESC");
+
+                if ($result->num_rows > 0) {
+
+                    while ($row = $result->fetch_assoc()) {
+
+                ?>
+
+                        <tr>
+
+                            <td><?= $row['player_id'] ?></td>
+
+                            <td><?= $row['player_name'] ?></td>
+
+                            <td><?= $row['game_1'] ?></td>
+
+                            <td><?= $row['game_2'] ?></td>
+
+
+
+                        </tr>
+
+                    <?php }
+                } else { ?>
+
+                    <tr>
+                        <td colspan="5">No records found...</td>
+                    </tr>
+
+                <?php } ?>
+
+            </tbody>
+
+        </table>
+
     </div>
 
-    <div class="col-md-12" id="importFrm" style="display: none;">
+    <script>
+        function formToggle(ID) {
 
-        <form action="importcsvfile.php" method="post" enctype="multipart/form-data">
+            var element = document.getElementById(ID);
 
-            <input type="file" name="file" />
+            if (element.style.display === "none") {
 
-            <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+                element.style.display = "block";
 
-        </form>
+            } else {
 
-    </div>
+                element.style.display = "none";
 
-    <table class="table table-striped table-bordered">
+            }
 
-        <thead class="thead-dark">
-
-            <tr>
-
-                <th>Jugador</th>
-
-                <th>Nombre</th>
-
-                <th>Game 1</th>
-
-                <th>Game 2</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-        <?php
-
-        $result = $db->query("SELECT * FROM week_2 ORDER BY id DESC");
-
-        if ($result->num_rows > 0) {
-
-            while ($row = $result->fetch_assoc()) {
-
-        ?>
-
-            <tr>
-
-                <td><?= $row['player_id'] ?></td>
-
-                <td><?= $row['player_name'] ?></td>
-
-                <td><?= $row['game_1'] ?></td>
-
-                <td><?= $row['game_2'] ?></td>
-
-                
-
-            </tr>
-
-        <?php } } else { ?>
-
-            <tr><td colspan="5">No records found...</td></tr>
-
-        <?php } ?>
-
-        </tbody>
-
-    </table>
-
-</div>
-
-<script>
-
-function formToggle(ID){
-
-    var element = document.getElementById(ID);
-
-    if(element.style.display === "none"){
-
-        element.style.display = "block";
-
-    }else{
-
-        element.style.display = "none";
-
-    }
-
-}
-
-</script>
+        }
+    </script>
 
 </body>
 
