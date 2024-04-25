@@ -1,6 +1,7 @@
 <?php 
 
-require_once 'dbconfig.php'; 
+require_once 'dbconfig.php';
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
 
 $filename = "tabla_" . date('Y-m-d') . ".csv"; 
 
@@ -12,9 +13,9 @@ $fields = array('player_id', 'player_name', 'game_1', 'game_2');
 
 fputcsv($f, $fields, $delimiter); 
 
-$result = $db->query("SELECT * FROM week_2 ORDER BY id DESC"); 
+$result = $db->query("SELECT * FROM week_2 ORDER BY player_id ASC"); 
 
-if ($result->num_rows > 0) { 
+if ($result) { 
 
     while ($row = $result->fetch_assoc()) { 
 

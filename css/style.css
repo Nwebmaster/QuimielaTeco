@@ -52,8 +52,8 @@ main{
     height: 80vh; 
     width: 100%;
     background-image: url("/QuimielaTeco/img/clbackground.jpg");
-    background-size: fit;
-
+    background-size: caintain;
+   
 }
 h1{
     font-size: 2em;
@@ -78,6 +78,7 @@ h2{
     overflow: hidden;
     position: relative;
     text-align: center;
+    border-radius: .2em;
 }
 table, th,td{
     width: auto;

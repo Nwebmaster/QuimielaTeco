@@ -3,7 +3,12 @@
 // Include the database configuration file
 
 require_once 'dbconfig.php';
+
+//Set MySQL Error Reporting Mode
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+//Create query
+
 $query = "SELECT * FROM week_2 ORDER BY player_id ASC";
 $result = mysqli_query($db, $query);
 
@@ -24,13 +29,25 @@ $result = mysqli_query($db, $query);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
+<div class="row">
 
+    <div class="col-md-12 head">
+
+        <div class="float-right">
+
+            <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i> Import</a>
+
+            <a href="exportcsvfile.php" class="btn btn-primary"><i class="exp"></i> Export</a>
+
+        </div>
+
+    </div>
 <body>
     <table class="table table-striped table-bordered">
 
         <thead class="thead-dark">
 
-            <tr>
+            <tr class>
 
                 <th>Jugador</th>
 
@@ -47,18 +64,14 @@ $result = mysqli_query($db, $query);
                     while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                         <td><?php echo $row['player_id']; ?></td>
-
-
-
-
+                        <td><?php echo $row['player_name']; ?></td>
+                        <td><?php echo $row['game_1']; ?></td>
+                        <td><?php echo $row['game_2']; ?></td>
             </tr>
-    <?php
+                <?php
                     }
                 }
-
-    ?>
-
-
+                ?>
     </table>
 
 </body>

@@ -17,7 +17,7 @@
         </h1>
     </header>
     <main>
-        <section>
+        <section class="container-md">
             <div class="games">
 
                 <div class="form">
