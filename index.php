@@ -11,17 +11,26 @@
 </head>
 
 <body>
-    <header style="height: 10vh; background-color: DarkCyan;">
-        <h1>
-            Ki-Niela
-        </h1>
+    <header>
+        
+
+    
+        <span>Bienvenido: <?php echo "usuario";?></span>
+       
+        <div><a class="btn btn-danger">Salir</a></div>
+        
+
+        
+
+    </div>
     </header>
     <main>
         <section class="container-md">
+        
             <div class="games">
-
+            <h2>Jornada #</h2>
                 <div class="form">
-                    <h2>Week 2</h2>
+                    
                     <form action="insertBet.php" method="post">
 
 
@@ -30,7 +39,7 @@
                         </label>
 
 
-                        <table class="table table-success table-striped">
+                        <table class="table table-success table-striped" >
 
                             <thead>
 
@@ -88,7 +97,7 @@
                                     <th><img src="/quimielateco/TeamLogos/barca2.png"><br>Team4</th>
                                     </td>
                                 </tr>
-                                <!--
+                            <!--    
                             <tr>
                                 <th>Team3</th>
                                 <td>
@@ -234,7 +243,8 @@
         </section>
     </main>
 </body>
-<footer style="height: 10vh; background-color: DarkCyan;">
+<footer>
+    <p>All Rights May Not Be Reserved</p>
 </footer>
 
 </html>

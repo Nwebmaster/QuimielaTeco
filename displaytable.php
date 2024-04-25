@@ -25,8 +25,10 @@ $result = mysqli_query($db, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tabla</title>
+    <link rel="stylesheet" href="/quimielateco/css/style.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type = "text/javascript" src="colorCell.js" async></script>
 
 </head>
 <div class="row">
@@ -43,9 +45,9 @@ $result = mysqli_query($db, $query);
 
     </div>
 <body>
-    <table class="table table-striped table-bordered">
+    <table class="table table-bordered table-hover table-responsive table-sm" id="test" >
 
-        <thead class="thead-dark">
+        <thead class="thead-dark" >
 
             <tr class>
 
@@ -57,6 +59,8 @@ $result = mysqli_query($db, $query);
 
                 <th>Game 2</th>
 
+                <th>Puntos</th>
+
             </tr>
             <tr>
                 <?php
@@ -67,11 +71,14 @@ $result = mysqli_query($db, $query);
                         <td><?php echo $row['player_name']; ?></td>
                         <td><?php echo $row['game_1']; ?></td>
                         <td><?php echo $row['game_2']; ?></td>
+                        <td>2</td>
+                        
             </tr>
                 <?php
                     }
                 }
                 ?>
+                
     </table>
 
 </body>

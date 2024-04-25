@@ -46,14 +46,49 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 2;
+    color: white;
+    
+
+}
+header span{
+    float: left;
+    padding: 1em;
+    font-size: 1.5em;
+}
+header div{
+    float: right;
+    padding: 2em;
+}
 
 main{
-    padding-top: 2.5em;
-    height: 80vh; 
+    padding-top: 12em;
+    height: 100vh; 
     width: 100%;
     background-image: url("/QuimielaTeco/img/clbackground.jpg");
-    background-size: caintain;
+    background-size: 100% 100%;
+    position: absolute;
    
+   
+}
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, .4);
+    color: white;
+    z-index: 3;
+    font-size: 1em;
+    text-align: center ;
+    padding-top: 2em;
+    position: absolute;
+    bottom: 0;
+
 }
 h1{
     font-size: 2em;
@@ -70,28 +105,34 @@ h2{
 .games{
     padding: 1em;
     width: 50%;
-    height: 60vh;
+    height: auto;
+    color: white;
     margin: auto;
-    background-color:green; 
+    background-color:rgba(6, 6, 6, 0.5); 
     border: solid; 
     border-color: white;
-    overflow: hidden;
-    position: relative;
+    
+    position: absolute;
     text-align: center;
-    border-radius: .2em;
+    border-radius: 2em;
+    
 }
 table, th,td{
     width: auto;
     border: 2px solid white;
     border-collapse: collapse;
     text-align: center;
-    font-size: 1rem;
-    padding: 4px;
+    font-size: 1em;
+    padding: 2em;
     margin: auto;
     position: relative;
     
-
 }
+    td{
+    background-color: green;
+    }
+
+
 button{
     cursor: pointer;
     margin-top: 1em;
