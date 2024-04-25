@@ -29,6 +29,7 @@ $result = mysqli_query($db, $query);
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script type = "text/javascript" src="colorCell.js" async></script>
+    <script type = "text/javascript" src="totalPoints.js" async></script>
 
 </head>
 <div class="row">
@@ -37,7 +38,7 @@ $result = mysqli_query($db, $query);
 
         <div class="float-right">
 
-            <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i> Import</a>
+            
 
             <a href="exportcsvfile.php" class="btn btn-primary"><i class="exp"></i> Export</a>
 
@@ -45,9 +46,9 @@ $result = mysqli_query($db, $query);
 
     </div>
 <body>
-    <table class="table table-bordered table-hover table-responsive table-sm" id="test" >
+    <table class="table table-bordered table-hover table-responsive table-sm" id="color-cell" >
 
-        <thead class="thead-dark" >
+        <thead class="thead-dark " >
 
             <tr class>
 
@@ -55,30 +56,33 @@ $result = mysqli_query($db, $query);
 
                 <th>Nombre</th>
 
-                <th>Game 1</th>
+                <th >Game 1</th>
 
                 <th>Game 2</th>
 
                 <th>Puntos</th>
+                
 
             </tr>
-            <tr>
+            <tr id="result-1">
                 <?php
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                        <td><?php echo $row['player_id']; ?></td>
-                        <td><?php echo $row['player_name']; ?></td>
+                        <td ><?php echo $row['player_id']; ?></td>
+                        <td ><?php echo $row['player_name']; ?></td>
                         <td><?php echo $row['game_1']; ?></td>
                         <td><?php echo $row['game_2']; ?></td>
-                        <td>2</td>
+                        <td id="total-points" ></td>
                         
+                         
             </tr>
                 <?php
                     }
                 }
                 ?>
-                
+              
     </table>
+    
 
 </body>

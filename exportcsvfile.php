@@ -9,7 +9,7 @@ $delimiter = ",";
 
 $f = fopen('php://memory', 'w'); 
 
-$fields = array('player_id', 'player_name', 'game_1', 'game_2'); 
+$fields = array('player_id', 'player_name', 'game_1', 'game_2', 'Puntos'); 
 
 fputcsv($f, $fields, $delimiter); 
 
