@@ -2,49 +2,26 @@
 //require_once 'dbconfig.php';
 session_start();
 ?>
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ki-Niela</title>
-    <link rel="stylesheet" href="/quimielateco/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<body>
-    <header>
-
-
-
-        <span>Bienvenido: <?php echo $_SESSION['username'] ?></span>
-
-        <div><a class="btn btn-danger">Salir</a></div>
-
-
-
-
-        </div>
-    </header>
+<?php
+include "header.php";
+?>
     <main>
         <section class="container-md">
 
             <div class="games">
                 <h2>Jornada #</h2>
-                <div class="form">
+                <div class="form ">
 
                     <form action="insertBet.php" method="post">
 
 
-                        <label class="form-control">Nombre
-                            <input type="text" name="player_name">
+                        <label class=" w-50">Nombre
+                            <input type="text" name="player_name" class="w-50">
+                            
                         </label>
-
-
-                        <table class="table table-success table-striped">
-
+                        <br>
+                        <table class="table table-success table-striped w-25">
+                        
                             <thead>
 
                                 <tr>
@@ -58,7 +35,7 @@ session_start();
                             <tbody>
                                 <tr>
                                     <th><img src="/quimielateco/TeamLogos/RiverPlate2.png"><br>Team1</th>
-                                    <td>
+                                    <td >
                                         <label>
                                             <input type="radio" name="radio_1" value="L">
                                             <span></span>

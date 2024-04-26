@@ -105,20 +105,20 @@ h2{
 .games{
     padding: 1em;
     width: 50%;
-    height: auto;
+    height: 60vh;
     color: white;
     margin: auto;
     background-color:rgba(6, 6, 6, 0.5); 
     border: solid; 
     border-color: white;
     
-    position: absolute;
+   
     text-align: center;
     border-radius: 2em;
     
 }
 table, th,td{
-    width: auto;
+    width: 25vw;
     border: 2px solid white;
     border-collapse: collapse;
     text-align: center;

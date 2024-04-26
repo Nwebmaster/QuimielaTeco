@@ -16,21 +16,22 @@
 
 </head>
 
-<div class="games">
-    <h4>Login</h4>
+<div class="games d-flex justify-content-center">
+    
     <form action="login.php" method="post">
 
-        <div class="form-group col-sm-7">
+        <div class="form-group ">
+        <h4>Iniciar Sesion</h4>
             <input name="username" type="text" class="form-control" placeholder="Enter Username">
         </div>
 
-        <div class="col-sm-7">
+        <div >
             <input name="password" type="password" class="form-control" placeholder="Enter Password">
         </div>
 
         <br>
 
-        <div style="text-align: center;">
+        <div class="justify-content center">
             <button class=" btn btn-success" name="login" type="Submit">Entrar</button>
             <button class="btn btn-warning" name="signup" type="Submit">Registrate</button>
         </div>
