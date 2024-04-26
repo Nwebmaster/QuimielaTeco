@@ -1,3 +1,7 @@
+<?php
+//require_once 'dbconfig.php';
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -12,25 +16,25 @@
 
 <body>
     <header>
-        
 
-    
-        <span>Bienvenido: <?php echo "usuario";?></span>
-       
+
+
+        <span>Bienvenido: <?php echo $_SESSION['username'] ?></span>
+
         <div><a class="btn btn-danger">Salir</a></div>
-        
 
-        
 
-    </div>
+
+
+        </div>
     </header>
     <main>
         <section class="container-md">
-        
+
             <div class="games">
-            <h2>Jornada #</h2>
+                <h2>Jornada #</h2>
                 <div class="form">
-                    
+
                     <form action="insertBet.php" method="post">
 
 
@@ -39,7 +43,7 @@
                         </label>
 
 
-                        <table class="table table-success table-striped" >
+                        <table class="table table-success table-striped">
 
                             <thead>
 
@@ -97,7 +101,7 @@
                                     <th><img src="/quimielateco/TeamLogos/barca2.png"><br>Team4</th>
                                     </td>
                                 </tr>
-                            <!--    
+                                <!--    
                             <tr>
                                 <th>Team3</th>
                                 <td>

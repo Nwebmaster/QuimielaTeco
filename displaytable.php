@@ -28,8 +28,8 @@ $result = mysqli_query($db, $query);
     <link rel="stylesheet" href="/quimielateco/css/style.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script type = "text/javascript" src="colorCell.js" async></script>
-    <script type = "text/javascript" src="totalPoints.js" async></script>
+    <script type="text/javascript" src="colorCell.js" async></script>
+    <script type="text/javascript" src="totalPoints.js" async></script>
 
 </head>
 <div class="row">
@@ -38,51 +38,52 @@ $result = mysqli_query($db, $query);
 
         <div class="float-right">
 
-            
 
+            <a href="index.php" class="btn btn-info">Inicio</a>
             <a href="exportcsvfile.php" class="btn btn-primary"><i class="exp"></i> Export</a>
 
         </div>
 
     </div>
-<body>
-    <table class="table table-bordered table-hover table-responsive table-sm" id="color-cell" >
 
-        <thead class="thead-dark " >
+    <body>
+        <table class="table table-bordered table-hover table-responsive table-sm" id="color-cell">
 
-            <tr class>
+            <thead class="thead-dark ">
 
-                <th>Jugador</th>
+                <tr class>
 
-                <th>Nombre</th>
+                    <th>Jugador</th>
 
-                <th >Game 1</th>
+                    <th>Nombre</th>
 
-                <th>Game 2</th>
+                    <th>Game 1</th>
 
-                <th>Puntos</th>
-                
+                    <th>Game 2</th>
 
-            </tr>
-            <tr id="result-1">
-                <?php
-                if ($result) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                ?>
-                        <td ><?php echo $row['player_id']; ?></td>
-                        <td ><?php echo $row['player_name']; ?></td>
-                        <td><?php echo $row['game_1']; ?></td>
-                        <td><?php echo $row['game_2']; ?></td>
-                        <td id="total-points" ></td>
-                        
-                         
-            </tr>
-                <?php
+                    <th>Puntos</th>
+
+
+                </tr>
+                <tr id="result-1">
+                    <?php
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                            <td><?php echo $row['player_id']; ?></td>
+                            <td><?php echo $row['player_name']; ?></td>
+                            <td><?php echo $row['game_1']; ?></td>
+                            <td><?php echo $row['game_2']; ?></td>
+                            <td id="total-points"></td>
+
+
+                </tr>
+        <?php
+                        }
                     }
-                }
-                ?>
-              
-    </table>
-    
+        ?>
 
-</body>
+        </table>
+
+
+    </body>
