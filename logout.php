@@ -4,9 +4,9 @@ session_start();
 ?>
 
 <?php
- $_SESSION['username'] = null;
- $_SESSION['first_name'] = null;
- $_SESSION['user_role'] = null;
+$_SESSION['username'] = null;
+$_SESSION['first_name'] = null;
+$_SESSION['user_role'] = null;
 
- header("Location: ../index.php");
+header("Location: ../quimielaTeco/index.php");
 ?>
