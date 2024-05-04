@@ -9,7 +9,7 @@ session_start();
 <div id="wrapper">
 
 
-
+    <?php include "../admin/admin_navigation.php"; ?>
     <!-- Navigation -->
 
 
@@ -25,7 +25,7 @@ session_start();
 
 
                     <h1 class="page-header">
-                        Welcome to admin
+                        Bienvenido Administrador
 
 
                         <small> <?php
@@ -118,6 +118,72 @@ session_start();
                         </div>
                     </div>
                     <a href="comments.php">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-file-text fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+
+                                <?php
+
+                                $query = "SELECT * FROM week_2";
+                                $select_all_post = mysqli_query($db, $query);
+                                $post_count = mysqli_num_rows($select_all_post);
+
+                                echo  "<div class='huge'>{$post_count}</div>"
+
+                                ?>
+
+
+                                <div>Jornadas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="posts.php">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-list fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+
+                                <?php
+
+                                $query = "SELECT * FROM week_2";
+                                $select_all_categories = mysqli_query($db, $query);
+                                $category_count = mysqli_num_rows($select_all_categories);
+
+                                echo  "<div class='huge'>{$category_count}</div>"
+
+                                ?>
+
+                                <div>Pagos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="categories.php">
                         <div class="panel-footer">
                             <span class="pull-left">View Details</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
