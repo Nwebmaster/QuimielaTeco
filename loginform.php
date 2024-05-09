@@ -37,8 +37,9 @@ if (!isset($_SESSION['username'])) { ?>
 
             <div class="justify-content center">
                 <button class=" btn btn-success" name="login" type="Submit">Entrar</button>
-                <button class="btn btn-warning" name="signup" type="Submit">Registrate</button>
+                <a href="/QuimielaTeco/registerform.php"><button type="button" class="btn btn-warning">Registrate</button></a>                 
             </div>
-        </form>
+        </form>        
     </div>
+    
 <?php } ?>
