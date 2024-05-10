@@ -3,22 +3,35 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 include "dbconfig.php";
 
-/*$username = $_REQUEST['username'];
+$username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 $first_name = $_REQUEST['first_name'];
 $last_name = $_REQUEST['last_name'];
-$cellphone = $_REQUEST['cellphone'];*/
+$cellphone = $_REQUEST['cellphone'];
 
 
-$query = "INSERT INTO users VALUES (default, 'john')";
-if ($db->query($query) === TRUE) {
-    echo "record inserted successfully";
+
+
+/*if ($db->query($query) === TRUE) {
+    echo "Bienvenido";
 } else {
     echo "Error: " . $query . "<br>" . $db->error;
-}
+} */
 
 // Close connection
-$db->close();
-?>
+//$db->close();
 
-//$query = "INSERT INTO users VALUES (DEFAULT, '$username', '$password', '$first_name', '$last_name', '$cellphone', DEFAULT)";
+$check_username = mysqli_query($db, "SELECT username FROM users WHERE username = '$username' ");
+if (mysqli_num_rows($check_username) > 0) {
+    echo 'Email Already exists';
+} else {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $query = "INSERT INTO users (username, user_password, first_name, last_name, cellphone)
+        VALUES ('$username', '$password', '$first_name', '$last_name', '$cellphone')";
+
+        echo ('Bienvenido');
+    }
+}
+// Close connection
+$db->close();
