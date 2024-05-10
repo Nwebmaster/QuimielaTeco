@@ -36,20 +36,6 @@ session_start();
                                 }
 
 
-                                // if(is_admin($_SESSION['username'])){
-
-                                //     echo " -- is admin too";
-
-                                // } else {
-
-                                //     echo " ---is not";
-
-                                // }
-
-
-
-
-
                                 ?></small>
                     </h1>
 
