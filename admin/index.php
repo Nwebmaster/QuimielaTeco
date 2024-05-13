@@ -1,11 +1,14 @@
-<?php include "../dbconfig.php"; ?>
+<?php include "../dbconfig.php"; 
+//Set MySQL Error Reporting Mode
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+?>
 <?php
 //require_once 'dbconfig.php';
 session_start();
 ?>
 <?php //include "../header.php"; ?>
 <?php include "../includes/admin_header.php"; ?>
-
+<script type="text/javascript" src="../adminUsers.js" async></script>
 <div id="wrapper">
 
 
@@ -70,9 +73,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                    <a href="users.php">
-                        <div class="panel-footer">
-                            <span class="pull-left">Administrar</span>
+                    <a>
+                        <div class="panel-footer" style="cursor:pointer;">
+                            <span class="pull-left" onclick="myFunction()">Administrar</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
@@ -103,9 +106,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                    <a href="comments.php">
-                        <div class="panel-footer">
-                            <span class="pull-left">Actualizar Resultados</span>
+                    <a>
+                        <div class="panel-footer" style="cursor:pointer;">
+                            <span class="pull-left" onclick="myFunction2()">Actualizar Resultados</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
@@ -178,3 +181,58 @@ session_start();
                     </a>
                 </div>
             </div>
+            <div class="container-md">
+                <div id="admin-users" style="display:none;">
+                <h1>Adminstrar Usuarios</h1>
+                    <table class="table" ></div>
+                    <thead class="thead-dark ">
+                    <tr class>
+
+                        <th>Nombre de Usuario</th>
+
+                        <th>Nombre</th>
+
+                        <th>Apellido</th>
+
+                        <th>No. Telefono</th>
+
+                        <th>Tipo de Usuario</th>
+
+                        <th class="text-center" >Reestablecer Contrasena</th>
+
+                        <th class="text-center" >Borrar Usuario</th>
+
+
+
+                    </tr>
+                    <tr id="">
+                        <?php
+
+                        //Create query
+
+                        $query = "SELECT * FROM users";
+                        $result = mysqli_query($db, $query);
+                        
+                        if ($result) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                                <td><?php echo $row['username']; ?></td>
+                                <td><?php echo $row['first_name']; ?></td>
+                                <td><?php echo $row['last_name']; ?></td>
+                                <td><?php echo $row['cellphone']; ?></td>
+                                <td><?php echo $row['user_role']; ?></td>
+                                <td class="text-center" id="total-points"><button type="button" class="btn btn-success">Re-establecer</button></td>
+                                <td class="text-center" id="total-points"><button type="button" class="btn btn-danger">Borrar</button></td>
+
+                    </tr>
+                        <?php
+                                    }
+                                }
+                        ?>
+                </table>
+            </div>
+            <div id="admin-results" style="display:none;">
+            <h1>Hello</h1>
+            </div>
+
+    </div>
