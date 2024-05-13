@@ -3,7 +3,7 @@
 //require_once 'dbconfig.php';
 session_start();
 ?>
-<?php include "../header.php"; ?>
+<?php //include "../header.php"; ?>
 <?php include "../includes/admin_header.php"; ?>
 
 <div id="wrapper">
@@ -66,13 +66,13 @@ session_start();
                                 ?>
 
 
-                                <div> Users</div>
+                                <div> Usuarios</div>
                             </div>
                         </div>
                     </div>
                     <a href="users.php">
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
+                            <span class="pull-left">Administrar</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
@@ -99,13 +99,13 @@ session_start();
                                 ?>
 
 
-                                <div>Players</div>
+                                <div>Actualizar Resultados</div>
                             </div>
                         </div>
                     </div>
                     <a href="comments.php">
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
+                            <span class="pull-left">Actualizar Resultados</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>

@@ -1,4 +1,3 @@
-<?php  ?>
 <!DOCTYPE HTML>
 <html>
 
@@ -21,23 +20,12 @@
     <header>
 
 
-        <?php if($_SESSION['user_role'] == 'Admin'){ ?>
 
-          <span style="padding-right:0;">Bienvenido: <?php echo $_SESSION['username']?></span>
-          <span style="font-style: italic; padding-left:0;">(<?php echo $_SESSION['user_role'] ?>)</span>
-          <span> <a href="admin/index.php" class="btn btn-primary">Admin Panel</a></span>
+        <span></span>
 
-          <div><a href="logout.php" class="btn btn-danger">Salir</a></div>
+        <div><a href="logout.php" class="btn btn-danger">Salir</a></div>
 
 
-        <?php } else { ?>
-
-          <span>Bienvenido: <?php echo $_SESSION['username'] ?></span>
-
-          <div><a href="logout.php" class="btn btn-danger">Salir</a></div>
-        <?php
-        }
-        ?>
         </div>
 
     </header>

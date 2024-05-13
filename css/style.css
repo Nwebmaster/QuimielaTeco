@@ -153,3 +153,10 @@ form{
     position: relative;
 
 }
+.db_connected {
+    color: rgb(60, 197, 60);
+  }
+  
+.db_disconnected {
+    color: rgb(253, 91, 91);
+}

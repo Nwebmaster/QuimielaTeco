@@ -12,7 +12,11 @@ $cellphone = $_REQUEST['cellphone'];
 
 $check_username = mysqli_query($db, "SELECT username FROM users WHERE username = '$username' ");
 if (mysqli_num_rows($check_username) > 0) {
-    echo 'Email Already exists';
+
+
+    echo 'El nombre de usuario ya existe';
+
+
 } else {
 
 
@@ -22,7 +26,7 @@ if (mysqli_num_rows($check_username) > 0) {
     $_SESSION['username'] = $username;
     $_SESSION['first_name'] = $first_name;
 
-    echo 'Bienvenido';
+    include 'welcome.php';
 }
 
 // Close connection

@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">CMS Admin</a>
+        <a class="navbar-brand" href="index.php">Menu</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -17,7 +17,7 @@
 
         <li><a href="">Users Online: <span class="usersonline"></span></a></li>
 
-        <li><a href="../index.php">HOME SITE</a></li>
+        <li><a href="../index.php">Pagina de Inicio</a></li>
 
 
 
@@ -66,7 +66,7 @@
             </li>
 
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#posts_dropdown"><i class="fa fa-fw fa-arrows-v"></i>Posts <i class="fa fa-fw fa-caret-down"></i></a>
+                <a href="javascript:;" data-toggle="collapse" data-target="#posts_dropdown"><i class="fa fa-fw fa-arrows-v"></i>Quinielas <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="posts_dropdown" class="collapse">
                     <li>
                         <a href="./posts.php"> View All Posts</a>
