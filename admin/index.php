@@ -1,4 +1,4 @@
-<?php include "../dbconfig.php"; 
+<?php include "../dbconfig.php";
 //Set MySQL Error Reporting Mode
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 ?>
@@ -6,7 +6,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 //require_once 'dbconfig.php';
 session_start();
 ?>
-<?php //include "../header.php"; ?>
+<?php //include "../header.php"; 
+?>
 <?php include "../includes/admin_header.php"; ?>
 <script type="text/javascript" src="../adminUsers.js" async></script>
 <div id="wrapper">
@@ -93,7 +94,7 @@ session_start();
 
                                 <?php
 
-                                $query = "SELECT * FROM week_2";
+                                $query = "SELECT * FROM week2_results";
                                 $select_all_comments = mysqli_query($db, $query);
                                 $comment_count = mysqli_num_rows($select_all_comments);
 
@@ -127,7 +128,7 @@ session_start();
 
                                 <?php
 
-                                $query = "SELECT * FROM week_2";
+                                $query = "SELECT * FROM week2_results";
                                 $select_all_post = mysqli_query($db, $query);
                                 $post_count = mysqli_num_rows($select_all_post);
 
@@ -183,56 +184,98 @@ session_start();
             </div>
             <div class="container-md">
                 <div id="admin-users" style="display:none;">
-                <h1>Adminstrar Usuarios</h1>
-                    <table class="table" ></div>
-                    <thead class="thead-dark ">
-                    <tr class>
+                    <h1>Adminstrar Usuarios</h1>
+                    <table class="table">
+                        <thead class="thead-dark ">
+                            <tr class>
 
-                        <th>Nombre de Usuario</th>
+                                <th>Nombre de Usuario</th>
 
-                        <th>Nombre</th>
+                                <th>Nombre</th>
 
-                        <th>Apellido</th>
+                                <th>Apellido</th>
 
-                        <th>No. Telefono</th>
+                                <th>No. Telefono</th>
 
-                        <th>Tipo de Usuario</th>
+                                <th>Tipo de Usuario</th>
 
-                        <th class="text-center" >Reestablecer Contrasena</th>
+                                <th class="text-center">Reestablecer Contrasena</th>
 
-                        <th class="text-center" >Borrar Usuario</th>
+                                <th class="text-center">Borrar Usuario</th>
 
 
 
-                    </tr>
-                    <tr id="">
-                        <?php
+                            </tr>
+                            <tr id="">
+                                <?php
 
-                        //Create query
+                                //Create query
 
-                        $query = "SELECT * FROM users";
-                        $result = mysqli_query($db, $query);
-                        
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                        ?>
-                                <td><?php echo $row['username']; ?></td>
-                                <td><?php echo $row['first_name']; ?></td>
-                                <td><?php echo $row['last_name']; ?></td>
-                                <td><?php echo $row['cellphone']; ?></td>
-                                <td><?php echo $row['user_role']; ?></td>
-                                <td class="text-center" id="total-points"><button type="button" class="btn btn-success">Re-establecer</button></td>
-                                <td class="text-center" id="total-points"><button type="button" class="btn btn-danger">Borrar</button></td>
+                                $query = "SELECT * FROM users";
+                                $result = mysqli_query($db, $query);
 
-                    </tr>
-                        <?php
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                        <td><?php echo $row['username']; ?></td>
+                                        <td><?php echo $row['first_name']; ?></td>
+                                        <td><?php echo $row['last_name']; ?></td>
+                                        <td><?php echo $row['cellphone']; ?></td>
+                                        <td><?php echo $row['user_role']; ?></td>
+                                        <td class="text-center" id="total-points"><button type="button" class="btn btn-success">Re-establecer</button></td>
+                                        <td class="text-center" id="total-points"><button type="button" class="btn btn-danger">Borrar</button></td>
+
+                            </tr>
+                    <?php
                                     }
                                 }
-                        ?>
-                </table>
-            </div>
-            <div id="admin-results" style="display:none;">
-            <h1>Hello</h1>
-            </div>
+                    ?>
+                    </table>
+                </div>
+                <div id="admin-results" style="display:none;">
+                    <h1>Actualizar Resultados</h1>
+                    <table class="table table-striped" style="width:50%">
+                        <thead class="thead-dark ">
+                            <tr class>
 
-    </div>
+                                <th scope="col" style="width:10%">No. Pardido</th>
+
+                                <th scope="col" style="width:30%">Pardido</th>
+
+                                <th scope="col" style="width:10%">Resultado Final</th>
+
+                                <th scope="col">Editar</th>
+
+
+
+
+
+                            </tr>
+                            <tr id="">
+                                <?php
+
+                                //Create query
+
+                                $query = "SELECT * FROM week2_results";
+                                $result = mysqli_query($db, $query);
+
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                        <td><?php echo $row['game_id']; ?></td>
+                                        <td><?php echo $row['game']; ?></td>
+                                        <td><?php echo $row['game_result']; ?></td>
+                                        <td class="text-center" id="editar"><button type="button" class="btn btn-success">Editar</button></td>
+                                        <td class="text-center" id="guardar"><button type="button" class="btn btn-primary">Guardar</button></td>
+
+
+
+
+                            </tr>
+                    <?php
+                                    }
+                                }
+                    ?>
+                    </table>
+                </div>
+            </div> <!--End of container-->

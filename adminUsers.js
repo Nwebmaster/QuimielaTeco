@@ -17,8 +17,13 @@ function myFunction2() {
     
     if (y.style.display === "none") {
       y.style.display = "block";
-    } else {
+    } else if (x.style.display = "block"){
+        x.style.display = "none";
+        y.style.display = "none";
+
+      } else {
       y.style.display = "none";
+      x.style.display = "none";
     }
     
   }
