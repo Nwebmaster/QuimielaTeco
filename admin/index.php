@@ -137,13 +137,13 @@ session_start();
                                 ?>
 
 
-                                <div>Jornadas</div>
+                                <div>Quiniela</div>
                             </div>
                         </div>
                     </div>
                     <a href="posts.php">
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
+                            <span class="pull-left">Crear Nueva Quiniela</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
@@ -185,11 +185,11 @@ session_start();
             <div class="container-md">
                 <div id="admin-users" style="display:none;">
                     <h1>Adminstrar Usuarios</h1>
-                    <table class="table">
+                    <table class="table table-bordered" style="width:80%">
                         <thead class="thead-dark ">
                             <tr class>
 
-                                <th>Nombre de Usuario</th>
+                                <th style="width:15%">Nombre de Usuario</th>
 
                                 <th>Nombre</th>
 
@@ -197,7 +197,7 @@ session_start();
 
                                 <th>No. Telefono</th>
 
-                                <th>Tipo de Usuario</th>
+                                <th style="width:5%">Tipo de Usuario</th>
 
                                 <th class="text-center">Reestablecer Contrasena</th>
 
@@ -234,17 +234,23 @@ session_start();
                 </div>
                 <div id="admin-results" style="display:none;">
                     <h1>Actualizar Resultados</h1>
-                    <table class="table table-striped" style="width:50%">
+                    <table class="table table-bordered" style="width:50%">
                         <thead class="thead-dark ">
                             <tr class>
 
                                 <th scope="col" style="width:10%">No. Pardido</th>
 
-                                <th scope="col" style="width:30%">Pardido</th>
+                                <th scope="col" style="width:20%" class="text-center">Local</th>
 
-                                <th scope="col" style="width:10%">Resultado Final</th>
+                                <th scope="col" style="width:1%">V.S</th>
 
-                                <th scope="col">Editar</th>
+                                <th scope="col" style="width:20%" class="text-center">Vicita</th>
+
+                                <th scope="col" style="width:10%" class="text-center">Resultado</th>
+
+                                <th scope="col" style="width:10%" class="text-center">Editar</th>
+
+                                <th scope="col" style="width:10%" class="text-center">Guardar Cambios</th>
 
 
 
@@ -263,10 +269,12 @@ session_start();
                                     while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                         <td><?php echo $row['game_id']; ?></td>
-                                        <td><?php echo $row['game']; ?></td>
-                                        <td><?php echo $row['game_result']; ?></td>
+                                        <td class="text-center"><?php echo $row['local']; ?></td>
+                                        <td class="text-center"><?php echo 'v.s'; ?></td>
+                                        <td class="text-center"><?php echo $row['visitor']; ?></td>
+                                        <td class="text-center"><?php echo $row['game_result']; ?></td>
                                         <td class="text-center" id="editar"><button type="button" class="btn btn-success">Editar</button></td>
-                                        <td class="text-center" id="guardar"><button type="button" class="btn btn-primary">Guardar</button></td>
+                                        <td class="text-center" id="guardar"><button type="button" class="btn btn-primary">OK</button></td>
 
 
 
